@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest-50: #f0fdf4;
+  --color-forest-100: #dcfce7;
+  --color-forest-500: #22c55e;
+  --color-forest-600: #16a34a;
+  --color-forest-900: #14532d;
+  
+  --color-ocean-500: #0ea5e9;
+  --color-ocean-600: #0284c7;
+
+  --color-alert-500: #ef4444;
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-xl rounded-2xl;
+  }
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 font-sans antialiased min-h-screen relative overflow-x-hidden;
+}
+
+/* Optional: Subtle ambient background gradient */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    radial-gradient(circle at 15% 50%, rgba(34, 197, 94, 0.08), transparent 30%),
+    radial-gradient(circle at 85% 30%, rgba(14, 165, 233, 0.08), transparent 30%);
+  z-index: -1;
+  pointer-events: none;
+}
